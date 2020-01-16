@@ -40,6 +40,7 @@
 ### Vampire magic n skills
 
 * Enai blood magic incorporated into Vampiric Thirst learning system
+* Possibly VL perks to unlock access to learning stronger magic
 * Costs energy (and mana)
 * HUD elements to show active draining powerups
 * Vampiric Drain is basic magic, weak and used when not enough room for other, more destructive spells that require mastering them first and cost more

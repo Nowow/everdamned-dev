@@ -1,0 +1,4 @@
+pa -D5.000000 ET_vampirefeedback ET_paired_vampfeedback.hkx
+pa -D5.0000 ET_FNISSPpa1 paired_FNISSPpa1.hkx
+b ET_gun_idle ET_gun_idle.hkx
+b ET_VampireBiteIdle ET_VampireBiteIdle.hkx
