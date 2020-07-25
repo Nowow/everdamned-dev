@@ -17,7 +17,7 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 	bool Done = FALSE
 	while (Done == FALSE)
 		ET_debug_trace("Offering main menu")
-		int buttonMain = MainMSG.Show(mslVTExpPoints.GetValueInt())
+		int buttonMain = MainMSG.Show(ET_ExpPoints.GetValueInt())
 		ET_debug_trace("buttonMain is: " + buttonMain)
 		if buttonMain == 3
 			ET_debug_trace("Exiting from main menu")
@@ -47,7 +47,7 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 					Formlist SubCategoryNavMessageFL = MainNavFL.GetAt(buttonMain) as Formlist
 					Formlist PowerMessageFL = SubCategoryNavMessageFL.GetAt(buttonCategory) as Formlist
 					Message PowerMSG = PowerMessageFL.GetAt(buttonSubCategory) as Message
-					int buttonPower = PowerMSG.Show(mslVTExpPoints.GetValueInt())
+					int buttonPower = PowerMSG.Show(ET_ExpPoints.GetValueInt())
 					ET_debug_trace("buttonPower is: " + buttonMain)
 					if buttonPower == 3
 						ET_debug_trace("Exiting from power menu")
@@ -65,17 +65,17 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 						Spell SelectedSpell = SpellFL.GetAt(buttonSubCategory) as Spell
 						
 						;if LevelAFL.HasForm(PowerSP)
-						;	mslVTExpPoints.Mod(-1)
+						;	ET_ExpPoints.Mod(-1)
 						;	Game.GetPlayer().AddSpell(PowerSP)
 						;elseif LevelBFL.HasForm(PowerSP)
-						;	mslVTExpPoints.Mod(-2)
+						;	ET_ExpPoints.Mod(-2)
 						;	Game.GetPlayer().AddSpell(PowerSP)
 						;elseif LevelCFL.HasForm(PowerSP)
-						;	mslVTExpPoints.Mod(-3)
+						;	ET_ExpPoints.Mod(-3)
 						;	Game.GetPlayer().AddSpell(PowerSP)
 						;endif
 						
-						mslVTExpPoints.Mod(-1)
+						ET_ExpPoints.Mod(-1)
 						Game.GetPlayer().AddSpell(SelectedSpell)
 						Done = TRUE
 						Debug.Notification("You have gained a new power!")
@@ -103,6 +103,6 @@ Message Property MainMSG Auto
 Message Property ET_PowerSelectionMenuGainMSG Auto
 Message Property mslVTPSMenuNoPointsMSG Auto
 
-GlobalVariable Property mslVTExpPoints Auto
+GlobalVariable Property ET_ExpPoints Auto
 
 Sound Property PowerLearnedSM Auto
