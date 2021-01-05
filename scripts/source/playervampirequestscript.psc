@@ -127,7 +127,9 @@ Event OnUpdate()
 	if BloodPoolCurrentVar >= BloodPoolMaxVar
 		;Notification("I feel full, my hunger is quiet.")
 		ET_debug_trace("BloodPool overflowed")
-		ET_HunFullMSG.Show()	
+		ET_HunFullMSG.Show()
+		BloodPoolCurrentVar = BloodPoolMaxVar
+		
 	endif
 
 ;Checking for passage of time (including large time jumps like sleep, fast travel and so on)
